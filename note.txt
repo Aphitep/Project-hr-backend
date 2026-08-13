@@ -1,0 +1,8 @@
+✅ Login
+✅ Dashboard
+✅ Employee CRUD
+✅ Department CRUD
+✅ Position CRUD
+✅ Search
+✅ Pagination
+✅ Upload รูปพนักงาน
