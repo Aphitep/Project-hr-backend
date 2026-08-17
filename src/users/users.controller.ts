@@ -8,7 +8,8 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
-import { AuthGuard } from 'src/auth/auth.guard';
+import { Roles } from 'src/decorator/role.decorator';
+import { Role } from 'src/enums/role.enum';
 import { CreateUserDto, UpdateUserDto } from 'src/users/dto/users.dto';
 import { UsersService } from 'src/users/users.service';
 
@@ -17,6 +18,7 @@ export class UsersController {
   constructor(private usersService: UsersService) {}
 
   @Get()
+  @Roles(Role.Admin)
   async getUsers() {
     return await this.usersService.findAll();
   }

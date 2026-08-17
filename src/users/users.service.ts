@@ -1,13 +1,14 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { Role } from 'src/enums/role.enum';
 import { CreateUserDto, UpdateUserDto } from 'src/users/dto/users.dto';
 import { User } from 'src/users/interface/users.interface';
 
 @Injectable()
 export class UsersService {
   private mockUser: CreateUserDto[] = [
-    { id: 1, username: 'adam', password: 'abc123', role: 'Admin' },
-    { id: 2, username: 'Peter', password: 'bob123', role: 'Employee' },
-    { id: 3, username: 'John', password: 'john123', role: 'Employee' },
+    { id: 1, username: 'adam', password: 'abc123', role: Role.Admin },
+    { id: 2, username: 'Peter', password: 'bob123', role: Role.User },
+    { id: 3, username: 'John', password: 'john123', role: Role.User },
   ];
   async findAll(): Promise<User[] | undefined> {
     if (!this.mockUser) {
