@@ -6,3 +6,17 @@
 ✅ Search
 ✅ Pagination
 ✅ Upload รูปพนักงาน
+
+User CRUD
+   ↓
+Authentication ⭐ ← ทำต่อเลย
+   ↓
+Authorization / Role
+   ↓
+Employee
+   ↓
+Department / Position
+   ↓
+Leave
+   ↓
+Dashboard / Statistics

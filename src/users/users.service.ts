@@ -5,7 +5,7 @@ import { User } from 'src/users/interface/users.interface';
 @Injectable()
 export class UsersService {
   private mockUser: CreateUserDto[] = [
-    { id: 1, username: 'adame', password: 'abc123', role: 'Admin' },
+    { id: 1, username: 'adam', password: 'abc123', role: 'Admin' },
     { id: 2, username: 'Peter', password: 'bob123', role: 'Employee' },
     { id: 3, username: 'John', password: 'john123', role: 'Employee' },
   ];

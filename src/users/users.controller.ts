@@ -6,13 +6,16 @@ import {
   ParseIntPipe,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from 'src/auth/auth.guard';
 import { CreateUserDto, UpdateUserDto } from 'src/users/dto/users.dto';
 import { UsersService } from 'src/users/users.service';
 
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
+
   @Get()
   async getUsers() {
     return await this.usersService.findAll();
@@ -30,7 +33,6 @@ export class UsersController {
   // ) {
   //   return this.usersService.update(dto, id);
   // }
-
   findUser(username: string) {
     return this.usersService.find(username);
   }
