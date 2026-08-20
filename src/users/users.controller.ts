@@ -8,10 +8,12 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
+import { Prisma } from 'generated/prisma/client';
+import { Pubilc } from 'src/decorator/public.decorator';
 import { Roles } from 'src/decorator/role.decorator';
 import { Role } from 'src/enums/role.enum';
-import { CreateUserDto, UpdateUserDto } from 'src/users/dto/users.dto';
 import { UsersService } from 'src/users/users.service';
+import { CreateUserDto } from './dto/users.dto';
 
 @Controller('users')
 export class UsersController {
@@ -23,6 +25,7 @@ export class UsersController {
     return await this.usersService.findAll();
   }
 
+  @Pubilc()
   @Post()
   createUsers(@Body() dto: CreateUserDto) {
     return this.usersService.create(dto);

@@ -1,9 +1,11 @@
 import { PartialType } from '@nestjs/mapped-types';
 import {
+  IsEmpty,
   IsEnum,
   IsIn,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsString,
   MaxLength,
   MinLength,
@@ -11,7 +13,8 @@ import {
 import { Role } from 'src/enums/role.enum';
 
 export class CreateUserDto {
-  @IsNumber()
+  @IsEmpty()
+  @IsOptional()
   id: number;
 
   @IsString()
